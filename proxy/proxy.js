@@ -4,6 +4,15 @@ var url = require('url');
 /*
  * This proxy sits between the client and the server.  Additional 
  * use could be to extend this proxy to cache url, images etc.
+ * 
+ * NOTE: 
+ *  A proxy server offers a level of redirection, which facilitates a variety of useful applications:
+    caching, logging, and security-related software. This technique explores how to
+    use the core http module to create HTTP proxies. Fundamentally all that’s required is
+    an HTTP server that catches requests, and then an HTTP client to clone them.
+    The http.createServer and http.request methods can catch and retransmit
+    requests. We’ll also need to interpret the original request so we can safely copy it—the
+    url core module has an ideal URL-parsing method that can help do this.
 */
 //1.  Create standard HTTP Server instance
 http.createServer(function(req, res) {
